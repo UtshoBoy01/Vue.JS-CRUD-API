@@ -20,7 +20,7 @@ export const useAuthStore = defineStore("authStore", {
         if (res.ok) {
           this.user = data;
         }
-        console.log(data);
+        // console.log(data);
       }
     },
 
@@ -50,8 +50,8 @@ export const useAuthStore = defineStore("authStore", {
           authorization: `Bearer ${localStorage.getItem("token")}`,
         },
       });
-      const data = await res.json();
-      console.log(data);
+      // const data = await res.json();
+      // console.log(data);
 
       if (res.ok) {
         this.user = null;

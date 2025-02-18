@@ -7,6 +7,15 @@ export const usePostStore = defineStore("postStore", {
     };
   },
   actions: {
+    //**************************** Get All Post  **************************** */
+    async getAllPosts() {
+      const res = await fetch("/api/posts");
+      const data = await res.json();
+
+      // console.log(data);
+      return data;
+    },
+
     //**************************** Create a Post  **************************** */
     async createPost(formData) {
       const res = await fetch("api/posts", {
