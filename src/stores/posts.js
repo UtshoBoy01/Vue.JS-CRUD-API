@@ -18,12 +18,14 @@ export const usePostStore = defineStore("postStore", {
       });
       const data = await res.json();
 
+      //! Log
       console.log(data);
 
       if (data.errors) {
         this.errors = data.errors;
       } else {
         this.errors = {};
+        this.router.push({ name: "home" });
       }
     },
   },
