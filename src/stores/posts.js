@@ -19,8 +19,6 @@ export const usePostStore = defineStore("postStore", {
     async getPosts(post) {
       const res = await fetch(`/api/posts/${post}`);
       const data = await res.json();
-      // console.log(data);
-
       return data.post;
     },
 
@@ -34,9 +32,6 @@ export const usePostStore = defineStore("postStore", {
         body: JSON.stringify(formData),
       });
       const data = await res.json();
-
-      //! Log
-      // console.log(data);
 
       if (data.errors) {
         this.errors = data.errors;
@@ -60,7 +55,6 @@ export const usePostStore = defineStore("postStore", {
         if (res.ok) {
           this.router.push({ name: "home" });
         }
-        // console.log(data);
       }
     },
   },
